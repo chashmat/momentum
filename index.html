@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>New Tab</title>
+      <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+      <div class="centered">
+            <div class="time" title="Double click to toggle between 24 and 12 hour clock, and click to remove border">
+                  <p class="hour card"></p>
+                  <p class="sec">:</p>
+                  <p class="min card"></p>
+                  <p class="am-pm card"></p>
+            </div>
+            <p class="greeting"></p>
+            <div class="heading-container">
+                  <div class="heading">Search by</div>
+                  <div class="logo"></div>
+                  <img class="down-arrow" src="./images/accessories/icon-down.svg" alt="&#9660;">
+                  <div class="selection">
+                        <div class="heading-select">Search With</div>
+                        <div class="cont-select google">
+                              <div class="select">
+                                    <img src="./images/logo/logo-google.svg">
+                                    Google
+                              </div>
+                        </div>
+                        <div class="cont-select bing">
+                              <div class="select">
+                                    <img src="./images/logo/logo-bing.svg">
+                                    Bing
+                              </div>
+                        </div>
+                        <div class="cont-select duckduckgo">
+                              <div class="select">
+                                    <img src="./images/logo/logo-duckduckgo.svg">
+                                    DuckDuckGo
+                              </div>
+                        </div>
+                  </div>
+            </div>
+            <div class="search-container">
+                  <div class="search-engine">
+                        <span class="search-icon">
+                              <span class="shadow"></span>
+                        </span>
+                        <input type="text" class="search-query">
+                        <span class="underline"></span>
+                        <span class="mic-icon">
+                              <span class="shadow"></span>
+                        </span>
+                  </div>
+            </div>
+      </div>
+      <input type="file" id="file" accept="image/*">
+      <label for="file"><img src="./images/accessories/icon-upload.svg"> your own background image</label>
+      <span class="restore-default"><img src="./images/accessories/icon-restore.svg">Restore default</span>
+      <div class="get-name hide-name">
+            <div class="cont">
+                  <div class="que">Hello, What's your name?</div>
+                  <div class="name-input-cont">
+                        <input type="text" class="write-name">
+                        <span class="underline-name"></span>
+                  </div>
+            </div>
+            <div class="error">
+                  Name Feild is required
+            </div>
+            <span class="next">Continue <img src="./images/accessories/icon-next.svg" alt="&#5171;"></span>
+      </div>
+      <div class="speech">
+            <div class="holder">
+                  <div class="text wait">Wait...</div>
+                  <div class="text listen">Listening...</div>
+                  <div class="text result"></div>
+                  <div class="mic">
+                        <span></span>
+                  </div>
+            </div>
+            <div class="cont-opt">
+                  <div class="search">
+                        <img src="./images/accessories/icon-search.svg" alt="q">
+                        search
+                  </div>
+                  <div class="cancel">
+                        <img src="./images/accessories/icon-close.svg" alt="x">
+                        cancel
+                  </div>
+            </div>
+            <div class="cont-opt-fail">
+                  <div class="try-again">
+                        <img src="./images/accessories/icon-replay.svg" alt="q">
+                        try again
+                  </div>
+                  <div class="cancel">
+                        <img src="./images/accessories/icon-close.svg" alt="x">
+                        cancel
+                  </div>
+            </div>
+      </div>
+      <script src="./script.js"></script>
+</body>
+
+</html>

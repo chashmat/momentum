@@ -1,0 +1,9 @@
+{
+      "name": "Momentum",
+      "version": "1.0",
+      "description": "Display on New Tab",
+      "chrome_url_overrides": {
+            "newtab": "./index.html"
+      },
+      "manifest_version": 2
+}

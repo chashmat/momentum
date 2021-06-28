@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+
+* {
+	padding: 0px;
+	margin: 0px;
+	font-family: 'Poppins', sans-serif;
+	user-select: none;
+	color: #ffffff;
+	transition: all 0.25s;
+}
+
+:root {
+	--padding: 0px; /* 26px to cover full */
+}
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+}
+
+div.centered {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+div.time {
+	display: flex;
+	font-size: 80px;
+	align-items: baseline;
+}
+
+div.time > p.am-pm {
+	font-size: 25px;
+}
+
+p.card {
+	margin: 8px;
+	box-shadow: 0px 0px 8px 5px #191818;
+	padding: 4px;
+	width: 102px;
+	border-radius: 7px;
+	text-align: center;
+}
+
+p.am-pm.card {
+	width: initial;
+}
+
+p.greeting {
+	font-size: 60px;
+	width: 100%;
+	text-align: center;
+}
+
+div.heading-container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+div.heading {
+	font-size: 31px;
+}
+
+div.logo {
+	display: inline-block;
+	-webkit-mask-size: 100%;
+	background: #fff;
+	-webkit-mask-repeat: no-repeat;
+}
+
+div.logo.google {
+	-webkit-mask-image: url(./images/logo/logo-google.svg);
+	padding: 8.5px;
+	margin: 18px 2px -2px 3px;
+}
+
+div.logo.bing {
+	-webkit-mask-image: url(./images/logo/logo-bing.svg);
+	padding: 6px;
+	margin: 16px 5px -2px 5px;
+}
+
+div.logo.duckduckgo {
+	-webkit-mask-image: url(./images/logo/logo-duckduckgo-white.svg);
+	padding: 8px;
+	margin: 15px 2px -2px 7px;
+}
+
+div.heading-container img {
+	height: 28px;
+	display: inline-block;
+	margin: 14px 0px 0px -8px;
+	cursor: pointer;
+}
+
+div.search-engine {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+}
+
+span.search-icon,
+span.mic-icon {
+	cursor: pointer;
+	padding: 8px 9px;
+	border-radius: 65px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #ffffff3d;
+}
+
+span.search-icon::before {
+	content: url('./images/accessories/icon-search.svg');
+	margin: 0 0 -5px 0;
+}
+
+input.search-query {
+	background: transparent;
+	border: none;
+	outline: none;
+	border-bottom: 2px solid #ffffff00;
+	width: 350px;
+	font-size: 16px;
+	margin: -10px 8px 0px 7px;
+}
+
+span.underline {
+	width: 0px;
+	border-bottom: 2px solid;
+	position: absolute;
+	transform: translateY(6px);
+}
+
+div.search-engine:hover input.search-query {
+	border-bottom: 2px solid #ffffff33;
+}
+
+input.search-query:focus ~ span.underline {
+	width: 350px;
+}
+
+span.mic-icon::before {
+	content: url('./images/accessories/icon-mic.svg');
+	margin: 0 0px -5px 0;
+}
+
+span.shadow {
+	position: absolute;
+	background: #ffffffad;
+	padding: 0px;
+	border-radius: 65px;
+}
+
+span.search-icon:active span.shadow,
+span.mic-icon:active span.shadow {
+	padding: 21px;
+}
+
+label {
+	padding: 10px;
+	border: 2px solid;
+	border-radius: 100px;
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	cursor: pointer;
+	display: flex;
+	font-size: 15px;
+}
+
+input[type='file'] {
+	display: none;
+}
+
+span.restore-default {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	padding: 10px;
+	border: 2px solid;
+	border-radius: 60px;
+	cursor: pointer;
+	display: none;
+	font-size: 15px;
+}
+
+.no-shadow {
+	box-shadow: 0px 0px 0px 0px #ffffff00 !important;
+}
+
+div.get-name {
+	background: url(./images/bg/bg1.jpg);
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	height: 100%;
+	width: 100%;
+	background-size: cover;
+	background-position: top;
+	background-repeat: no-repeat;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 32px;
+}
+
+div.hide-name {
+	display: none;
+}
+
+div.cont {
+	width: 100%;
+	text-align: center;
+}
+
+div.name-input-cont {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 10px;
+}
+
+input.write-name {
+	width: 450px;
+	border: none;
+	outline: none;
+	background: transparent;
+	text-align: center;
+	border-bottom: 2px solid #ffffff00;
+	font-size: 25px;
+}
+
+span.underline-name {
+	width: 0px;
+	position: absolute;
+	border-bottom: 2px solid #ffffff;
+	transform: translateY(19px);
+}
+
+div.cont:hover input.write-name {
+	border-bottom: 2px solid #ffffff33;
+}
+
+input.write-name:focus ~ span.underline-name {
+	width: 450px;
+}
+
+span.next {
+	padding: 7px;
+	border: 2px solid;
+	border-radius: 50px;
+	font-size: 17px;
+	position: absolute;
+	bottom: 50px;
+	display: flex;
+	cursor: pointer;
+	visibility: hidden;
+	opacity: 0;
+}
+
+div.error {
+	position: absolute;
+	bottom: 215px;
+	color: #f44336;
+	opacity: 0;
+}
+
+div.selection {
+	position: absolute;
+	background: #ffffff;
+	border-radius: 7px;
+	padding: 5px 0px;
+	transform: translate(36px, 16px);
+	opacity: 0;
+	visibility: hidden;
+}
+
+div.selection::after {
+	content: '';
+	height: 10px;
+	width: 10px;
+	transform: rotate(45deg) translate(1px, -161px);
+	background: #ffffff;
+	position: absolute;
+}
+
+div.heading-select {
+	color: #383838;
+	font-size: 10.5px;
+	margin: 0 0 0 8px;
+}
+
+div.select {
+	color: #191919;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	font-size: 13px;
+}
+
+div.select img {
+	height: 16px;
+}
+
+div.google img {
+	margin: 0 6px 0 6px;
+}
+
+div.bing img {
+	margin: 0 9px 0 9px;
+}
+
+div.duckduckgo img {
+	margin: 0 6px 0 7px;
+}
+
+div.selection div.cont-select {
+	display: flex;
+	height: 29px;
+	width: 141px;
+	cursor: pointer;
+}
+
+div.cont-select:hover {
+	background: #e4e4e4;
+}
+
+div.speech {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	background: url(./images/bg/bg1.jpg);
+	background-size: cover;
+	background-position: top;
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+div.holder {
+	font-size: 35px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+div.mic {
+	padding: 15px 16px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 2px solid;
+	border-radius: 50px;
+	margin: 0px 0 0 41px;
+}
+
+div.mic span:nth-child(1) {
+	background: url(./images/accessories/icon-mic.svg);
+	padding: 11px;
+	margin: 0 0 0 -2px;
+}
+
+div.mic::after {
+	content: '';
+	position: absolute;
+	background: #ffffffad;
+	padding: var(--padding);
+	border-radius: 50px;
+}
+
+div.cont-opt,
+div.cont-opt-fail {
+	position: absolute;
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
+	bottom: 235px;
+	opacity: 0;
+	visibility: hidden;
+}
+
+div.cont-opt div,
+div.cont-opt-fail div {
+	border: 2px solid;
+	border-radius: 50px;
+	padding: 5px 7px;
+	display: flex;
+	cursor: pointer;
+	font-size: 15px;
+}
+
+div.text {
+	display: none;
+	opacity: 0;
+}
