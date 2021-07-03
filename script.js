@@ -16,7 +16,6 @@ if (localStorage.getItem("bg") == "./images/bg/bg1.jpg") {
       labelInput.style.display = "none";
       restoreDefault.style.display = "flex";
 }
-body.style.background = `url("${localStorage.getItem("bg")}") center top / cover no-repeat`;
 
 customBginput.addEventListener("change", function (e) {
       const file = e.target.files[0];
@@ -414,4 +413,15 @@ input.addEventListener("keyup", function (e) {
       if (key == 13) {
             search();
       }
+});
+
+// Loading sys
+let loadImg = document.getElementsByClassName("img-loader")[0];
+let loadContent = document.getElementsByClassName("load")[0];
+window.addEventListener("load", function () {
+      setTimeout(() => {
+            loadImg.style.display = "none";
+            loadContent.style.display = "block";
+            body.style.background = `url("${localStorage.getItem("bg")}") center top / cover no-repeat`;
+      }, 700);
 });

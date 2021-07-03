@@ -1,9 +1,12 @@
 {
       "name": "Momentum",
       "version": "2.0",
-      "description": "Giving our users a new experience of using chrome!",
+      "description": "Giving our users a new experience of using their browsers!",
       "chrome_url_overrides": {
             "newtab": "./index.html"
+      },
+      "icons": {
+            "36": "images/logo/momentum-ext.gif"
       },
       "manifest_version": 2
 }
