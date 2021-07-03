@@ -1,7 +1,7 @@
 {
       "name": "Momentum",
       "version": "2.0",
-      "description": "This is v2.0",
+      "description": "Giving our users a new experience of using chrome!",
       "chrome_url_overrides": {
             "newtab": "./index.html"
       },
