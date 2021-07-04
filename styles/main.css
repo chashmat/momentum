@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+@import url('./time.css');
+@import url('./greeting.css');
+@import url('./slect-engine.css');
+@import url('./search-engine.css');
+@import url('./name.css');
+@import url('./select-dropdown.css');
+@import url('./mic.css');
+@import url('./loader.css');
+* {
+	padding: 0px;
+	margin: 0px;
+	font-family: 'Poppins', sans-serif;
+	user-select: none;
+	color: #ffffff;
+	transition: all 0.25s;
+}
+
+:root {
+	--padding: 0px; /* 26px to cover full */
+}
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+	background: #ffffff;
+}
+
+div.centered {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+label {
+	padding: 10px;
+	border: 2px solid;
+	border-radius: 100px;
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	cursor: pointer;
+	display: flex;
+	font-size: 15px;
+}
+
+input[type='file'] {
+	display: none;
+}
+
+span.restore-default {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	padding: 10px;
+	border: 2px solid;
+	border-radius: 60px;
+	cursor: pointer;
+	display: none;
+	font-size: 15px;
+}

@@ -1,0 +1,41 @@
+div.heading-container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+div.heading {
+	font-size: 31px;
+}
+
+div.logo {
+	display: inline-block;
+	-webkit-mask-size: 100%;
+	background: #fff;
+	-webkit-mask-repeat: no-repeat;
+}
+
+div.logo.google {
+	-webkit-mask-image: url('../images/logo/logo-google.svg');
+	padding: 8.5px;
+	margin: 18px 2px -2px 3px;
+}
+
+div.logo.bing {
+	-webkit-mask-image: url('../images/logo/logo-bing.svg');
+	padding: 6px;
+	margin: 16px 5px -2px 5px;
+}
+
+div.logo.duckduckgo {
+	-webkit-mask-image: url('../images/logo/logo-duckduckgo-white.svg');
+	padding: 8px;
+	margin: 15px 2px -2px 7px;
+}
+
+div.heading-container img {
+	height: 28px;
+	display: inline-block;
+	margin: 14px 0px 0px -8px;
+	cursor: pointer;
+}

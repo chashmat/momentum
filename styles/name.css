@@ -1,0 +1,77 @@
+div.get-name {
+	background: url('../images/bg/bg1.jpg');
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	height: 100%;
+	width: 100%;
+	background-size: cover;
+	background-position: top;
+	background-repeat: no-repeat;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 32px;
+}
+
+div.hide-name {
+	display: none;
+}
+
+div.cont {
+	width: 100%;
+	text-align: center;
+}
+
+div.name-input-cont {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 10px;
+}
+
+input.write-name {
+	width: 450px;
+	border: none;
+	outline: none;
+	background: transparent;
+	text-align: center;
+	border-bottom: 2px solid #ffffff00;
+	font-size: 25px;
+}
+
+span.underline-name {
+	width: 0px;
+	position: absolute;
+	border-bottom: 2px solid #ffffff;
+	transform: translateY(19px);
+}
+
+div.cont:hover input.write-name {
+	border-bottom: 2px solid #ffffff33;
+}
+
+input.write-name:focus ~ span.underline-name {
+	width: 450px;
+}
+
+span.next {
+	padding: 7px;
+	border: 2px solid;
+	border-radius: 50px;
+	font-size: 17px;
+	position: absolute;
+	bottom: 50px;
+	display: flex;
+	cursor: pointer;
+	visibility: hidden;
+	opacity: 0;
+}
+
+div.error {
+	position: absolute;
+	bottom: 215px;
+	color: #f44336;
+	opacity: 0;
+}

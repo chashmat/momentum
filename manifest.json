@@ -6,7 +6,10 @@
             "newtab": "./index.html"
       },
       "icons": {
-            "48": "images/logo/momentum-ext.png"
+            "16": "./images/logo/momentum16.ico",
+            "32": "./images/logo/momentum32.png",
+            "48": "./images/logo/momentum48.png",
+            "128": "./images/logo/momentum128.png"
       },
       "manifest_version": 2
 }
