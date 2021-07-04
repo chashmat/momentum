@@ -6,7 +6,7 @@
             "newtab": "./index.html"
       },
       "icons": {
-            "36": "images/logo/momentum-ext.gif"
+            "48": "images/logo/momentum-ext.png"
       },
       "manifest_version": 2
 }
