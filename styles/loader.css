@@ -1,5 +1,7 @@
 div.load {
+	opacity: 0;
 	display: none;
+	transition: 0.5s;
 }
 
 img.img-loader {
@@ -7,4 +9,14 @@ img.img-loader {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+}
+
+img.img-loader.fade-out {
+	animation: fadeOut 0.5s linear 0s 1;
+}
+
+@keyframes fadeOut {
+	100% {
+		opacity: 0;
+	}
 }

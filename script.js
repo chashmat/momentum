@@ -207,6 +207,7 @@ continueBtn.addEventListener("click", function () {
 let logo = document.getElementsByClassName("logo")[0];
 let downArrow = document.getElementsByClassName("down-arrow")[0];
 let selectionBox = document.getElementsByClassName("selection")[0];
+let dropDownPage = document.getElementsByClassName("drop-down-page")[0];
 let options = [
       {
             value: document.getElementsByClassName("google")[0],
@@ -220,20 +221,27 @@ let options = [
             value: document.getElementsByClassName("duckduckgo")[0],
             id: "duckduckgo"
       }
-]
+];
+
 downArrow.addEventListener("click", function () {
+      hideShowSlectionBox();
+});
+
+dropDownPage.addEventListener("click", function () {
       hideShowSlectionBox();
 });
 
 function hideShowSlectionBox() {
       if (selectionBox.style.opacity == 0) {
             selectionBox.style.visibility = "visible";
+            dropDownPage.classList.remove("none");
             setTimeout(() => {
                   selectionBox.style.opacity = 1;
                   selectionBox.style.transform = "translate(36px, 40px)";
             }, 1);
       } else if (selectionBox.style.opacity == 1) {
             selectionBox.style.visibility = "hidden";
+            dropDownPage.classList.add("none");
             setTimeout(() => {
                   selectionBox.style.opacity = 0;
                   selectionBox.style.transform = "translate(36px, 16px)";
@@ -419,9 +427,13 @@ input.addEventListener("keyup", function (e) {
 let loadImg = document.getElementsByClassName("img-loader")[0];
 let loadContent = document.getElementsByClassName("load")[0];
 window.addEventListener("load", function () {
+      loadImg.classList.add("fade-out");
       setTimeout(() => {
             loadImg.style.display = "none";
-            loadContent.style.display = "block";
-            body.style.background = `url("${localStorage.getItem("bg")}") center top / cover no-repeat`;
-      }, 700);
+      }, 500);
+      loadContent.style.display = "block";
+      setTimeout(() => {
+            loadContent.style.opacity = 1;
+      }, 500);
+      body.style.background = `url("${localStorage.getItem("bg")}") center top / cover no-repeat`;
 });

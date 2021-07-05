@@ -57,3 +57,13 @@ div.selection div.cont-select {
 div.cont-select:hover {
 	background: #e4e4e4;
 }
+
+.drop-down-page {
+	height: 100vh;
+	width: 100vw;
+	position: absolute;
+}
+
+.drop-down-page.none {
+	display: none;
+}
