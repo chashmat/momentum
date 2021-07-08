@@ -1,23 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
 @import url('./time.css');
 @import url('./greeting.css');
-@import url('./slect-engine.css');
+@import url('./select-engine.css');
 @import url('./search-engine.css');
 @import url('./name.css');
 @import url('./select-dropdown.css');
 @import url('./mic.css');
 @import url('./loader.css');
+@import url('./link.css');
 * {
 	padding: 0px;
 	margin: 0px;
 	font-family: 'Poppins', sans-serif;
 	user-select: none;
-	color: #ffffff;
 	transition: all 0.25s;
+	color: var(--theme-color);
 }
 
 :root {
-	--padding: 0px; /* 26px to cover full */
+	--padding: 13px; /* 26px to cover full */
+	--theme-color: #ffffff;
+	--theme-color-3d: #ffffff3d;
+	--theme-color-ad: #ffffffad;
+	--theme-color-33: #ffffff33;
 }
 
 html,
@@ -31,12 +36,13 @@ div.centered {
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -85%);
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
 	width: 100%;
+	z-index: 100;
 }
 
 label {

@@ -28,7 +28,8 @@ div.mic {
 }
 
 div.mic span {
-	background: url('../images/accessories/icon-mic.svg');
+	-webkit-mask-image: url('../images/accessories/icon-mic.svg');
+	background: var(--theme-color);
 	padding: 11px;
 	margin: 0 0 0 -2px;
 }
@@ -36,7 +37,7 @@ div.mic span {
 div.mic::after {
 	content: '';
 	position: absolute;
-	background: #ffffffad;
+	background: var(--theme-color-ad);
 	padding: var(--padding);
 	border-radius: 50px;
 }
@@ -65,4 +66,22 @@ div.cont-opt-fail div {
 div.text {
 	display: none;
 	opacity: 0;
+}
+
+span.mic-search {
+	-webkit-mask-image: url(../images/accessories/icon-search.svg);
+	background: var(--theme-color);
+	padding: 12px;
+}
+
+span.cancel-icon {
+	-webkit-mask-image: url(../images/accessories/icon-close.svg);
+	background: var(--theme-color);
+	padding: 12px;
+}
+
+span.try-again-icon {
+	-webkit-mask-image: url(../images/accessories/icon-replay.svg);
+	background: var(--theme-color);
+	padding: 12px;
 }

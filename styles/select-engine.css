@@ -11,7 +11,7 @@ div.heading {
 div.logo {
 	display: inline-block;
 	-webkit-mask-size: 100%;
-	background: #fff;
+	background: var(--theme-color);
 	-webkit-mask-repeat: no-repeat;
 }
 
@@ -33,9 +33,11 @@ div.logo.duckduckgo {
 	margin: 15px 2px -2px 7px;
 }
 
-div.heading-container img {
-	height: 28px;
-	display: inline-block;
-	margin: 14px 0px 0px -8px;
+div.heading-container div.down-arrow {
+	padding: 13px;
+	-webkit-mask-image: url('../images/accessories/icon-down.svg');
+	background: var(--theme-color);
+	-webkit-mask-repeat: no-repeat;
+	margin: 15px 0 0 -6px;
 	cursor: pointer;
 }

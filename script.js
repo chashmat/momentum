@@ -139,22 +139,24 @@ time.addEventListener("click", function () {
 });
 
 // Set greetings
-let greetingElement = document.getElementsByClassName("greeting")[0];
+let greetingElement = document.getElementsByClassName("greeting-words")[0];
+let nameElement = document.getElementsByClassName("name")[0];
 function setGreeting() {
       let name = localStorage.getItem("name");
       let date = new Date();
       let hr = date.getHours();
       if (hr >= 0 && hr < 6) {
-            greetingElement.innerHTML = `It's Sleeping time go sleep, ${name}.`;
+            greetingElement.innerHTML = `It's late night go sleep,`;
       } else if (hr >= 6 && hr < 12) {
-            greetingElement.innerHTML = `Good Morning, ${name}.`;
+            greetingElement.innerHTML = `Good Morning,`;
       } else if (hr >= 12 && hr < 17) {
-            greetingElement.innerHTML = `Good Afternoon, ${name}.`;
+            greetingElement.innerHTML = `Good Afternoon,`;
       } else if (hr >= 17 && hr < 20) {
-            greetingElement.innerHTML = `Good Evening, ${name}.`;
+            greetingElement.innerHTML = `Good Evening,`;
       } else if (hr >= 20 && hr <= 23) {
-            greetingElement.innerHTML = `Good Night, ${name}.`;
+            greetingElement.innerHTML = `Good Night,`;
       }
+      nameElement.innerHTML = `${name}.`;
 }
 
 setGreeting();
@@ -175,7 +177,7 @@ function setItemName() {
             errorCode.style.opacity = 1;
       } else if (nameInput.value != "") {
             localStorage.setItem("name", nameInput.value);
-            namePage.style.display = "none";
+            namePage.classList.toggle("hide-name");
             setGreeting();
       }
 }
@@ -203,11 +205,18 @@ continueBtn.addEventListener("click", function () {
       setItemName();
 });
 
+// name changing
+let question = document.getElementsByClassName("que")[0];
+nameElement.addEventListener("dblclick", () => {
+      question.innerHTML = "So, What should I call you.";
+      namePage.classList.toggle("hide-name");
+});
+
 // slection sys
 let logo = document.getElementsByClassName("logo")[0];
 let downArrow = document.getElementsByClassName("down-arrow")[0];
 let selectionBox = document.getElementsByClassName("selection")[0];
-let dropDownPage = document.getElementsByClassName("drop-down-page")[0];
+let dropDownPage = document.getElementsByClassName("drop-down-page");
 let options = [
       {
             value: document.getElementsByClassName("google")[0],
@@ -227,21 +236,23 @@ downArrow.addEventListener("click", function () {
       hideShowSlectionBox();
 });
 
-dropDownPage.addEventListener("click", function () {
-      hideShowSlectionBox();
-});
+for (let i = 0; i < dropDownPage.length; i++) {
+      dropDownPage[i].addEventListener("click", function () {
+            hideShowSlectionBox();
+      });
+}
 
 function hideShowSlectionBox() {
       if (selectionBox.style.opacity == 0) {
             selectionBox.style.visibility = "visible";
-            dropDownPage.classList.remove("none");
+            for (let i = 0; i < dropDownPage.length; i++) dropDownPage[i].classList.remove("none");
             setTimeout(() => {
                   selectionBox.style.opacity = 1;
                   selectionBox.style.transform = "translate(36px, 40px)";
             }, 1);
       } else if (selectionBox.style.opacity == 1) {
             selectionBox.style.visibility = "hidden";
-            dropDownPage.classList.add("none");
+            for (let i = 0; i < dropDownPage.length; i++) dropDownPage[i].classList.add("none");
             setTimeout(() => {
                   selectionBox.style.opacity = 0;
                   selectionBox.style.transform = "translate(36px, 16px)";
@@ -290,6 +301,7 @@ let mic = document.getElementsByClassName("mic-icon")[0];
 let micQuery = null;
 let holderFail = document.getElementsByClassName("cont-opt-fail")[0];
 let tryAgain = document.getElementsByClassName("try-again")[0];
+let centeredDiv = document.getElementsByClassName("centered")[0]
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 const recognition = new SpeechRecognition();
 
@@ -326,6 +338,7 @@ recognition.addEventListener("result", function (e) {
 });
 
 mic.addEventListener("click", function () {
+      centeredDiv.style.display = "none"
       speechPage.style.display = "flex";
       textDisplayWait.style.display = "block";
       setTimeout(() => {
@@ -346,6 +359,7 @@ mic.addEventListener("click", function () {
 
 for (i = 0; i < cancelMic.length; i++) {
       cancelMic[i].addEventListener("click", function () {
+            centeredDiv.style.display = "flex";
             speechPage.style.display = "none";
             textDisplayResult.innerHTML = "";
             textDisplayResult.style.display = "none";
@@ -424,13 +438,10 @@ input.addEventListener("keyup", function (e) {
 });
 
 // Loading sys
-let loadImg = document.getElementsByClassName("img-loader")[0];
+let loader = document.getElementsByClassName("loader")[0];
 let loadContent = document.getElementsByClassName("load")[0];
 window.addEventListener("load", function () {
-      loadImg.classList.add("fade-out");
-      setTimeout(() => {
-            loadImg.style.display = "none";
-      }, 500);
+      loader.classList.add("fade-out");
       loadContent.style.display = "block";
       setTimeout(() => {
             loadContent.style.opacity = 1;

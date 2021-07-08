@@ -44,12 +44,12 @@ input.write-name {
 span.underline-name {
 	width: 0px;
 	position: absolute;
-	border-bottom: 2px solid #ffffff;
+	border-bottom: 2px solid var(--theme-color);
 	transform: translateY(19px);
 }
 
 div.cont:hover input.write-name {
-	border-bottom: 2px solid #ffffff33;
+	border-bottom: 2px solid var(--theme-color-33);
 }
 
 input.write-name:focus ~ span.underline-name {
@@ -67,6 +67,15 @@ span.next {
 	cursor: pointer;
 	visibility: hidden;
 	opacity: 0;
+}
+
+span.next::after {
+	content: '';
+	-webkit-mask-image: url(../images/accessories/icon-next.svg);
+	background: var(--theme-color);
+	-webkit-mask-repeat: no-repeat;
+	padding: 10px;
+	margin: 2px 0 0 0;
 }
 
 div.error {

@@ -6,6 +6,7 @@ div.selection {
 	transform: translate(36px, 16px);
 	opacity: 0;
 	visibility: hidden;
+	z-index: 100;
 }
 
 div.selection::after {

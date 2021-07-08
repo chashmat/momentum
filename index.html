@@ -7,7 +7,6 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>New Tab</title>
       <link rel="stylesheet" href="./styles/main.css">
-      <link rel="shortcut icon" href="./images/logo/momentum16.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -20,11 +19,14 @@
                         <p class="min card"></p>
                         <p class="am-pm card"></p>
                   </div>
-                  <p class="greeting"></p>
+                  <div class="greeting">
+                        <span class="greeting-words"></span>
+                        <span class="name" title="Double click to change name"></span>
+                  </div>
                   <div class="heading-container">
                         <div class="heading">Search by</div>
                         <div class="logo"></div>
-                        <img class="down-arrow" src="./images/accessories/icon-down.svg" alt="&#9660;">
+                        <div class="down-arrow"></div>
                         <div class="selection">
                               <div class="heading-select">Search With</div>
                               <div class="cont-select google">
@@ -59,6 +61,8 @@
                               </span>
                         </div>
                   </div>
+                  <div class="links-container"></div>
+                  <div class="drop-down-page none"></div>
             </div>
             <input type="file" id="file" accept="image/*">
             <label for="file"><img src="./images/accessories/icon-upload.svg"> your own background image</label>
@@ -74,7 +78,7 @@
                   <div class="error">
                         Name Feild is required
                   </div>
-                  <span class="next">Continue <img src="./images/accessories/icon-next.svg" alt="&#5171;"></span>
+                  <span class="next">Continue</span>
             </div>
             <div class="speech">
                   <div class="holder">
@@ -87,28 +91,34 @@
                   </div>
                   <div class="cont-opt">
                         <div class="search">
-                              <img src="./images/accessories/icon-search.svg" alt="q">
+                              <span class="mic-search"></span>
                               search
                         </div>
                         <div class="cancel">
-                              <img src="./images/accessories/icon-close.svg" alt="x">
+                              <span class="cancel-icon"></span>
                               cancel
                         </div>
                   </div>
                   <div class="cont-opt-fail">
                         <div class="try-again">
-                              <img src="./images/accessories/icon-replay.svg" alt="q">
+                              <span class="try-again-icon"></span>
                               try again
                         </div>
                         <div class="cancel">
-                              <img src="./images/accessories/icon-close.svg" alt="x">
+                              <span class="cancel-icon"></span>
                               cancel
                         </div>
                   </div>
             </div>
+            <div class="drop-down-page none"></div>
       </div>
-      <div class="drop-down-page none"></div>
-      <img src="./images/logo/momentum.gif" alt="Momentum" class="img-loader">
+      <div class="loader">
+            <span class="one"></span>
+            <span class="two"></span>
+            <span class="three"></span>
+            <span class="four"></span>
+            <p>M</p>
+      </div>
       <script src="./script.js"></script>
 </body>
 
