@@ -40,4 +40,6 @@ div.heading-container div.down-arrow {
 	-webkit-mask-repeat: no-repeat;
 	margin: 15px 0 0 -6px;
 	cursor: pointer;
+	position: absolute;
+	transform: translateX(98px);
 }

@@ -8,6 +8,7 @@
 @import url('./mic.css');
 @import url('./loader.css');
 @import url('./link.css');
+@import url('./settings.css');
 * {
 	padding: 0px;
 	margin: 0px;

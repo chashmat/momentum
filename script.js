@@ -145,15 +145,13 @@ function setGreeting() {
       let name = localStorage.getItem("name");
       let date = new Date();
       let hr = date.getHours();
-      if (hr >= 0 && hr < 6) {
-            greetingElement.innerHTML = `It's late night go sleep,`;
-      } else if (hr >= 6 && hr < 12) {
+      if (hr >= 6 && hr < 12) {
             greetingElement.innerHTML = `Good Morning,`;
       } else if (hr >= 12 && hr < 17) {
             greetingElement.innerHTML = `Good Afternoon,`;
       } else if (hr >= 17 && hr < 20) {
             greetingElement.innerHTML = `Good Evening,`;
-      } else if (hr >= 20 && hr <= 23) {
+      } else if (hr >= 20 || hr < 6) {
             greetingElement.innerHTML = `Good Night,`;
       }
       nameElement.innerHTML = `${name}.`;
@@ -217,6 +215,7 @@ let logo = document.getElementsByClassName("logo")[0];
 let downArrow = document.getElementsByClassName("down-arrow")[0];
 let selectionBox = document.getElementsByClassName("selection")[0];
 let dropDownPage = document.getElementsByClassName("drop-down-page");
+let setArea = document.getElementsByClassName("setting-area")[0];
 let options = [
       {
             value: document.getElementsByClassName("google")[0],
@@ -238,7 +237,15 @@ downArrow.addEventListener("click", function () {
 
 for (let i = 0; i < dropDownPage.length; i++) {
       dropDownPage[i].addEventListener("click", function () {
-            hideShowSlectionBox();
+            if (setArea.classList.contains("none")) {
+                  hideShowSlectionBox();
+                  downArrow.style.zIndex = "100000";
+                  setIcon.style.zIndex = "0";
+            } else if (!(setArea.classList.contains("none"))) {
+                  openCloseSetting();
+                  downArrow.style.zIndex = "0";
+                  setIcon.style.zIndex = "100000";
+            }
       });
 }
 
@@ -248,15 +255,19 @@ function hideShowSlectionBox() {
             for (let i = 0; i < dropDownPage.length; i++) dropDownPage[i].classList.remove("none");
             setTimeout(() => {
                   selectionBox.style.opacity = 1;
-                  selectionBox.style.transform = "translate(36px, 40px)";
+                  selectionBox.style.transform = "translate(45px, 40px)";
             }, 1);
+            downArrow.style.zIndex = "100000";
+            setIcon.style.zIndex = "0";
       } else if (selectionBox.style.opacity == 1) {
             selectionBox.style.visibility = "hidden";
             for (let i = 0; i < dropDownPage.length; i++) dropDownPage[i].classList.add("none");
             setTimeout(() => {
                   selectionBox.style.opacity = 0;
-                  selectionBox.style.transform = "translate(36px, 16px)";
+                  selectionBox.style.transform = "translate(45px, 16px)";
             }, 1);
+            downArrow.style.zIndex = "0";
+            setIcon.style.zIndex = "100000";
       }
 }
 
@@ -448,3 +459,29 @@ window.addEventListener("load", function () {
       }, 500);
       body.style.background = `url("${localStorage.getItem("bg")}") center top / cover no-repeat`;
 });
+
+// settings open-close sys
+let setIcon = document.getElementsByClassName("setting-icon")[0];
+setArea.style.display = "none";
+
+setIcon.addEventListener("click", openCloseSetting);
+
+function openCloseSetting() {
+      setIcon.classList.toggle("rotate");
+      for (let i = 0; i < dropDownPage.length; i++) dropDownPage[i].classList.toggle("none");
+      if (setArea.style.display == "none") {
+            downArrow.style.zIndex = "0";
+            setIcon.style.zIndex = "100000";
+            setArea.style.display = "flex";
+            setTimeout(() => {
+                  setArea.classList.toggle("none");
+            }, 50);
+      } else if (setArea.style.display == "flex") {
+            downArrow.style.zIndex = "100000";
+            setIcon.style.zIndex = "0";
+            setArea.classList.toggle("none");
+            setTimeout(() => {
+                  setArea.style.display = "none";
+            }, 100);
+      }
+}

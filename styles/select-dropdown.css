@@ -3,7 +3,7 @@ div.selection {
 	background: #ffffff;
 	border-radius: 7px;
 	padding: 5px 0px;
-	transform: translate(36px, 16px);
+	transform: translate(45px, 16px);
 	opacity: 0;
 	visibility: hidden;
 	z-index: 100;
