@@ -6,9 +6,7 @@ let customBginput = document.getElementById("file");
 let labelInput = document.getElementsByTagName("label")[0];
 let restoreDefault = document.getElementsByClassName("restore-default")[0];
 let body = document.body;
-if (!("bg" in localStorage)) {
-      localStorage.setItem("bg", "./images/bg/bg1.jpg");
-}
+
 if (localStorage.getItem("bg") == "./images/bg/bg1.jpg") {
       labelInput.style.display = "flex";
       restoreDefault.style.display = "none";
@@ -42,102 +40,6 @@ restoreDefault.addEventListener("click", function () {
       restoreDefault.style.display = "none";
 });
 
-// clock sys
-
-let hour = document.getElementsByClassName("hour")[0];
-let minute = document.getElementsByClassName("min")[0];
-let second = document.getElementsByClassName("sec")[0];
-let amPm = document.getElementsByClassName("am-pm")[0];
-
-if (!("timeFormat" in localStorage)) {
-      localStorage.setItem("timeFormat", "12");
-}
-
-function clock() {
-      let date = new Date();
-      let hr = date.getHours();
-      let min = date.getMinutes();
-      let sec = date.getSeconds();
-
-      if (localStorage.getItem("timeFormat") == 24) {
-            hour.innerHTML = hr;
-            minute.innerHTML = min;
-            if (parseInt(hour.innerHTML) < 10 && parseInt(hour.innerHTML) >= 0) {
-                  hour.innerHTML = "0" + hr;
-            }
-            if (parseInt(minute.innerHTML) < 10 && parseInt(minute.innerHTML) >= 0) {
-                  minute.innerHTML = "0" + min;
-            }
-            second.style.opacity = 0;
-            amPm.style.display = "none";
-      } else if (localStorage.getItem("timeFormat") == 12) {
-            hour.innerHTML = hr % 12;
-            minute.innerHTML = min;
-            if (hr == 0 || hr == 12) {
-                  hour.innerHTML = 12;
-            }
-            if (parseInt(hour.innerHTML) < 10 && parseInt(hour.innerHTML) >= 0) {
-                  hour.innerHTML = "0" + hr % 12;
-            }
-            if (parseInt(minute.innerHTML) < 10 && parseInt(minute.innerHTML) >= 0) {
-                  minute.innerHTML = "0" + min;
-            }
-            if (sec % 2 == 0) {
-                  second.style.opacity = 0;
-            } else if (sec % 2 == 1) {
-                  second.style.opacity = 1;
-            }
-            amPm.style.display = "block";
-            if (hr < 12 && hr >= 0) {
-                  amPm.innerHTML = "am"
-            } else if (hr > 11 && hr < 24) {
-                  amPm.innerHTML = "pm";
-            }
-      }
-
-      setTimeout(clock, 1000);
-}
-clock();
-
-// toogle 12-24
-
-let time = document.getElementsByClassName("time")[0];
-time.addEventListener("dblclick", function () {
-      if (localStorage.getItem("timeFormat") == "12") {
-            localStorage.setItem("timeFormat", "24");
-      } else if (localStorage.getItem("timeFormat") == "24") {
-            localStorage.setItem("timeFormat", "12");
-      }
-});
-
-// toggle shadow
-let cards = document.getElementsByClassName("card");
-
-if (!("timeBorder" in localStorage)) {
-      localStorage.setItem("timeBorder", "yes");
-}
-
-if (localStorage.getItem("timeBorder") == "yes") {
-      for (let i = 0; i < cards.length; i++) {
-            cards[i].classList.remove("no-shadow");
-      }
-} else if (localStorage.getItem("timeBorder") == "no") {
-      for (let i = 0; i < cards.length; i++) {
-            cards[i].classList.add("no-shadow");
-      }
-}
-
-time.addEventListener("click", function () {
-      for (let i = 0; i < cards.length; i++) {
-            cards[i].classList.toggle("no-shadow");
-            if (cards[i].classList.contains("no-shadow")) {
-                  localStorage.setItem("timeBorder", "no");
-            } else if (!(cards[i].classList.contains("no-shadow"))) {
-                  localStorage.setItem("timeBorder", "yes");
-            }
-      }
-});
-
 // Set greetings
 let greetingElement = document.getElementsByClassName("greeting-words")[0];
 let nameElement = document.getElementsByClassName("name")[0];
@@ -165,10 +67,6 @@ let namePage = document.getElementsByClassName("get-name")[0];
 let nameInput = document.getElementsByClassName("write-name")[0];
 let continueBtn = document.getElementsByClassName("next")[0];
 let errorCode = document.getElementsByClassName("error")[0];
-
-if (!("name" in localStorage)) {
-      namePage.classList.toggle("hide-name");
-}
 
 function setItemName() {
       if (nameInput.value == "") {
@@ -269,10 +167,6 @@ function hideShowSlectionBox() {
             downArrow.style.zIndex = "0";
             setIcon.style.zIndex = "100000";
       }
-}
-
-if (!("searchEngine" in localStorage)) {
-      localStorage.setItem("searchEngine", "google");
 }
 
 function setLogo() {

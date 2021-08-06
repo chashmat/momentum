@@ -1,7 +1,2 @@
-let double = n => {
-      return n * 2;
-}
-
-const name = "Taha";
-
-export { double, name };
+export { clock } from './clock.js';
+export * as clockToogle from './clock-toogle.js';
